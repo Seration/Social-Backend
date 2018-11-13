@@ -1,0 +1,11 @@
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\bin\Debug\netcoreapp2.0\DatingAPI.deps.json
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\bin\Debug\netcoreapp2.0\DatingAPI.runtimeconfig.json
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\bin\Debug\netcoreapp2.0\DatingAPI.runtimeconfig.dev.json
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\bin\Debug\netcoreapp2.0\DatingAPI.dll
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\obj\Debug\netcoreapp2.0\DatingAPI.csprojAssemblyReference.cache
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\obj\Debug\netcoreapp2.0\DatingAPI.csproj.CoreCompileInputs.cache
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\obj\Debug\netcoreapp2.0\DatingAPI.AssemblyInfoInputs.cache
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\obj\Debug\netcoreapp2.0\DatingAPI.AssemblyInfo.cs
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\bin\Debug\netcoreapp2.0\DatingAPI.pdb
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\obj\Debug\netcoreapp2.0\DatingAPI.dll
+C:\Users\Sercan\source\repos\DatingAPI\DatingAPI\obj\Debug\netcoreapp2.0\DatingAPI.pdb
