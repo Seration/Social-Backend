@@ -36,6 +36,7 @@ namespace DatingAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //SetCompatibilityVersion(CompatibilityVerison.Version_2_1)
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().AddJsonOptions(opt => {
                 opt.SerializerSettings.ReferenceLoopHandling =
