@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using DatingAPI.Data;
 using DatingAPI.Dto;
 using DatingAPI.Models;
@@ -21,10 +22,12 @@ namespace DatingAPI.Controllers
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
-        public AuthController(IAuthRepository repo, IConfiguration config)
+        private readonly IMapper _mapper;
+        public AuthController(IAuthRepository repo, IConfiguration config, IMapper mapper)
         {
             _repo = repo;
             _config = config;
+            _mapper = mapper;
         }
 
         [HttpPost("register")]
@@ -36,27 +39,25 @@ namespace DatingAPI.Controllers
                 return BadRequest("Username already exists");
 
 
+            var userToCreate = _mapper.Map<User>(userforRegisterDto);
 
-            var userToCreate = new User
-            {
-                Username = userforRegisterDto.Username
-            };
+            var createdUser = await _repo.Register(userToCreate, userforRegisterDto.Password);
 
-            var createUser = await _repo.Register(userToCreate, userforRegisterDto.Password);
-            return StatusCode(201);
+            var userToReturn = _mapper.Map<UserForDetailedDto>(createdUser);
+
+            return CreatedAtRoute("GetUser", new { controller = "Users", id = createdUser.Id }, userToReturn);
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]UserForLoginDto userforLoginDto)
         {
-            var userFromRepo = await _repo.Login(userforLoginDto.Username.ToLower(), userforLoginDto.Password);
+            var userFromRepo = await _repo.Login(userforLoginDto.Username, userforLoginDto.Password);
 
             if (userFromRepo == null)
                 return Unauthorized();
 
-            //generate token
             var claims = new[]
-           {
+            {
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
                 new Claim(ClaimTypes.Name, userFromRepo.Username)
             };
@@ -77,9 +78,12 @@ namespace DatingAPI.Controllers
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
+            var user = _mapper.Map<UserForListDto>(userFromRepo);
+
             return Ok(new
             {
-                token = tokenHandler.WriteToken(token)
+                token = tokenHandler.WriteToken(token),
+                user
             });
         }
     }

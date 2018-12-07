@@ -1,0 +1,13 @@
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\b\DatingAppTest\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\b\DatingAppTest\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\b\DatingAppTest\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\b\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.deps.json
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\b\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.runtimeconfig.json
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\b\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.runtimeconfig.dev.json
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\b\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.dll
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\i\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.csprojAssemblyReference.cache
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\i\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.csproj.CoreCompileInputs.cache
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\i\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.AssemblyInfoInputs.cache
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\i\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.AssemblyInfo.cs
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\i\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.csproj.CopyComplete
+C:\Users\Sercan\source\repos\DatingAPI\.vs\DatingAPI\lut\0\i\DatingAppTest\Debug\netcoreapp2.1\DatingAppTest.dll

@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DatingAPI.Data;
 using DatingAPI.Dto;
+using DatingAPI.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatingAPI.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Produces("application/json")]
     [Route("api/[controller]")]
@@ -27,12 +29,27 @@ namespace DatingAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers([FromQuery]UserParams userParams)
         {
-            return Ok(_mapper.Map<IEnumerable<UserForListDto>>(await _repo.GetUsers()));
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            var userFromRepo = await _repo.GetUser(currentUserId);
+
+            if (string.IsNullOrEmpty(userParams.Gender))
+            {
+                userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
+            }
+
+            var users = await _repo.GetUsers(userParams);
+
+            var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
+
+            Response.AddPagination(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
+
+            return Ok(usersToReturn);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetUser")]
         public async Task<IActionResult> GetUser(int id)
         {
             return Ok(_mapper.Map<UserForDetailedDto>(await _repo.GetUser(id)));  //databaseden gelen id li sonucu userfor detaildto seklinde dondur
